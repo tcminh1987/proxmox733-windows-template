@@ -1,3 +1,32 @@
+THANKS Mr ThunderVM!!!
+https://forum.proxmox.com/threads/how-to-create-windows-cloudinit-templates-on-proxmox-7-3-patch-included.123338/
+
+########################################
+########################################
+Create VM (with intel e100 network device) and install windows
+Add cloudinit drive
+configure static ip (to connect later to the server, not required)
+Update windows
+Enable rdp (if you want users to connect remotely, don't enable it if you only want to access your server from the console)
+Disable hibernation/standby (For windows 10 installations)
+Clean up windows updates
+Remove recovery partition and expand disk (For windows 10 and some windows server versions)
+Create windows firewall rules for rdp (not required)
+Clone machine (If something goes wrong you won't have to waste your time installing windows over and over)
+Install virtio drivers
+Change network device to virtio
+Clone machine (If something goes wrong you won't have to waste your time installing windows over and over)
+Add serial port 0 and set display to serial port 0
+Install cloudbase init (You must install the Continous Build: https://cloudbase.it/downloads/CloudbaseInitSetup_x64.msi)
+Launch powershell script FixUserService.ps1 as administrator
+Upload cloudinit configuration files conf/*.conf, conf/Unattend.xml and localscripts/*.py
+Disable cloudbase startup by launching this command as administrator: sc config cloudbase-init start= disabled
+Launch sysprep with these commands
+cd "C:\Program Files\Cloudbase Solutions\Cloudbase-Init\conf"
+C:\Windows\System32\sysprep\sysprep.exe /generalize /oobe /unattend:Unattend.xml
+
+########################################
+########################################
 # Complete explanation
 
 https://proxmox
