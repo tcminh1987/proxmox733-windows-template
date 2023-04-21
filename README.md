@@ -19,7 +19,7 @@ https://forum.proxmox.com/threads/how-to-create-windows-cloudinit-templates-on-p
 * Clone machine (If something goes wrong you won't have to waste your time installing windows over and over)
 * Add serial port 0 and set display to serial port 0
 * Install cloudbase init (You must install the Continous Build: https://cloudbase.it/downloads/CloudbaseInitSetup_x64.msi)
-* Launch powershell script FixUserService.ps1 as administrator
+* Launch powershell script FixUserService.ps1 as administrator (Execute the following command set-executionpolicy -executionpolicy unrestricted to enable the permission to run scripts.)
 * Upload cloudinit configuration files conf/*.conf, conf/Unattend.xml and localscripts/*.py
 * Disable cloudbase startup by launching this command as administrator: sc config cloudbase-init start= disabled
 * Launch sysprep with these commands
@@ -29,11 +29,7 @@ https://forum.proxmox.com/threads/how-to-create-windows-cloudinit-templates-on-p
 ########################################
 ########################################
 # Complete explanation
-
-https://proxmox
-
 # Geco-cloudbase-init
-
 This is an implementation of Cloudbase-Init to Windows virtual machines running in a Proxmox Node in order to use cloud-init with those vms.
 
 What can you do with this implementation?
