@@ -28,6 +28,7 @@ https://forum.proxmox.com/threads/how-to-create-windows-cloudinit-templates-on-p
 
 **Note install Qemu-agent in Windows before create template:
 Install directly using the virtio driver CD. If it is win7/xp, you need to manually enter the CD, find the agent directory, and select 32-bit and 64-bit.
+
 ########################################
 ########################################
 # Complete explanation
